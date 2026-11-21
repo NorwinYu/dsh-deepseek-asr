@@ -104,7 +104,7 @@ From the plugin index (recommended):
 From a pinned release:
 
 ```sh
-dsh plugin --profile <name> add git+https://github.com/NorwinYu/dsh-deepseek-asr.git#v0.1.1
+dsh plugin --profile <name> add git+https://github.com/NorwinYu/dsh-deepseek-asr.git#v0.1.2
 ```
 
 Releases are pinned to a commit, so upgrading means installing the newer listed

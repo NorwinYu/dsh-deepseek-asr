@@ -4,7 +4,7 @@ All notable changes are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project
 adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.1.2] - 2026-11-21
 
 ### Added
 
@@ -20,6 +20,10 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - README rewritten as a project page: badges, table of contents, install paths,
   usage, configuration table, billing and privacy statements, troubleshooting
   matrix, and development notes.
+- README no longer carries YAML frontmatter, which GitHub rendered as a table at
+  the top of the page.
+
+## [Unreleased]
 
 ## [0.1.1] - 2026-11-21
 
@@ -47,6 +51,7 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Plugin index published on GitHub Pages, with a workflow that validates the
   index before deploying it.
 
-[Unreleased]: https://github.com/NorwinYu/dsh-deepseek-asr/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/NorwinYu/dsh-deepseek-asr/compare/v0.1.2...HEAD
+[0.1.2]: https://github.com/NorwinYu/dsh-deepseek-asr/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/NorwinYu/dsh-deepseek-asr/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/NorwinYu/dsh-deepseek-asr/releases/tag/v0.1.0
