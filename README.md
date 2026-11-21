@@ -37,7 +37,7 @@ package yet.
 Without the index, install the pinned commit directly:
 
 ```sh
-dsh plugin --profile <name> add git+https://github.com/NorwinYu/dsh-deepseek-asr.git
+dsh plugin --profile <name> add git+https://github.com/NorwinYu/dsh-deepseek-asr.git#v0.1.1
 ```
 
 Releases are pinned to a commit in the index, so upgrading means installing the
@@ -97,6 +97,11 @@ as the service exists.
 
 - No microphone: the Voice input bundle is not enabled, or the provider failed
   to load. Check the plugin manager for both rows.
+- The microphone asks to install a SenseVoice model: the Voice input bundle was
+  enabled *after* this one, so its patch layer ran later and restored
+  `defaultProvider: sensevoice-local`. Enable Voice input first, then this
+  bundle, or move `dsh-deepseek-asr` after it in the profile's
+  `dsh.profile.bundles`.
 - `No DEEPSEEK_API_KEY configured`: store the key under Settings -> Models.
 - HTTP 400 means the audio format was rejected; 401/403 means the key; 429
   means too many concurrent requests; 503/504 means the service side, retry.
