@@ -64,8 +64,8 @@ const icon = await readFile(join(root, 'icon.svg'), 'utf8')
 check(icon.trimStart().startsWith('<svg'), 'icon.svg is an SVG document')
 
 const readme = await readFile(join(root, 'README.md'), 'utf8')
-check(readme.startsWith('---\n'), 'README starts with frontmatter')
-check(/^kind:\s*["']?package-bundle/m.test(readme.slice(0, 300)), 'README declares the package-bundle kind')
+check(!readme.startsWith('---\n'), 'README has no YAML frontmatter (GitHub would render it as a table)')
+check(readme.length > 1000, 'README is substantive')
 check(/paid/i.test(readme), 'README states that the endpoint is a paid API')
 
 const index = JSON.parse(await readFile(join(root, 'site/index.json'), 'utf8'))

@@ -1,8 +1,3 @@
----
-description: "Cloud speech-to-text for Voice input through the DeepSeek ASR API."
-kind: "package-bundle"
----
-
 <p align="center">
   <img src="icon.svg" width="76" height="76" alt="DeepSeek ASR" />
 </p>
