@@ -26,15 +26,22 @@ profile's bundle list, so the provider swap always applies last.
 
 ## Install
 
-From a plugin index: turn on **Custom plugin indexes**, add the index URL under
-**Discover -> Add index source**, open **DeepSeek ASR**, and install the listed
-version.
+The bundle is distributed from GitHub through a plugin index; there is no npm
+package yet.
 
-Manually:
+1. Enable **Custom plugin indexes** in the plugin manager.
+2. Open **Discover -> Add index source** and paste
+   `https://norwinyu.github.io/dsh-deepseek-asr/index.json`.
+3. Open **DeepSeek ASR**, install the listed version, then reload.
+
+Without the index, install the pinned commit directly:
 
 ```sh
-dsh plugin --profile <name> add dsh-deepseek-asr
+dsh plugin --profile <name> add git+https://github.com/NorwinYu/dsh-deepseek-asr.git
 ```
+
+Releases are pinned to a commit in the index, so upgrading means installing the
+newer listed version rather than pulling whatever the branch holds.
 
 Then reload. The microphone sits between the model selector and the send
 button: click to record, click again to stop, and the transcript lands in the

@@ -4,6 +4,15 @@
   "description": "DeepSeek ASR cloud speech-to-text provider for DeepSeek Harness voice input",
   "type": "module",
   "license": "MIT",
+  "author": "Norwin Yu",
+  "homepage": "https://github.com/NorwinYu/dsh-deepseek-asr#readme",
+  "bugs": {
+    "url": "https://github.com/NorwinYu/dsh-deepseek-asr/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NorwinYu/dsh-deepseek-asr.git"
+  },
   "icon": "./icon.svg",
   "main": "lib/index.js",
   "exports": {
@@ -31,14 +40,6 @@
   "engines": {
     "dsh": ">=0.2.2-rc.1 <0.3.0",
     "node": ">=22"
-  },
-  "peerDependencies": {
-    "@deepseek-ai/dsh-experimental-voice-input-bundle": "0.2.2-rc.1"
-  },
-  "peerDependenciesMeta": {
-    "@deepseek-ai/dsh-experimental-voice-input-bundle": {
-      "optional": true
-    }
   },
   "dsh": {
     "bundle": {

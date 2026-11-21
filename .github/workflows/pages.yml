@@ -1,0 +1,58 @@
+name: Deploy plugin index to Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      # Parse the index with the same validator DSH ships. Pinned, because the
+      # package publishes prereleases and `latest` may lag the app build.
+      - name: Validate index format
+        run: |
+          npm install --no-save @deepseek-ai/dsh-plugin-market-index@0.2.2-rc.5
+          node --input-type=module -e "
+            import { readFile } from 'node:fs/promises'
+            import { parseMarketIndex } from '@deepseek-ai/dsh-plugin-market-index'
+            const url = 'https://norwinyu.github.io/dsh-deepseek-asr/index.json'
+            const doc = JSON.parse(await readFile('site/index.json', 'utf8'))
+            const parsed = parseMarketIndex(doc, url)
+            const first = parsed.plugins[0]
+            console.log('index ok:', parsed.plugins.length, 'plugin(s);',
+              first.name, first.versions[0].version,
+              'from', first.versions[0].source.type)
+          "
+
+  deploy:
+    needs: validate
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4
