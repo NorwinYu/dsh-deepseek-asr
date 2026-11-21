@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "DeepSeek ASR",
+    "description": "Cloud speech-to-text through DeepSeek's paid ASR API; no local model download.",
+    "detail": "docs/DETAIL.md"
+  }
+}

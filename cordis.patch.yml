@@ -1,0 +1,21 @@
+# This bundle layers on top of the built-in Voice input bundle
+# (@deepseek-ai/dsh-experimental-voice-input-bundle): it does not insert the
+# speech service, the Remote, or the microphone UI, it swaps the recognizer.
+#
+#   speech-to-text            point the shared registry at the cloud provider
+#   speech-to-text-sensevoice disable the local model row so nothing offers a
+#                             model download
+#   speech-to-text-deepseek   the provider itself, shipped inside this package
+#
+# A missing prerequisite only produces the loader's usual unknown-id warning;
+# the provider then waits for `speechToText` instead of failing the profile.
+- id: speech-to-text
+  name: '@deepseek-ai/dsh-experimental-speech-to-text'
+  config:
+    defaultProvider: deepseek-asr
+- id: speech-to-text-sensevoice
+  name: '@deepseek-ai/dsh-experimental-speech-to-text-sensevoice'
+  disabled: true
+- insert:
+    - id: speech-to-text-deepseek
+      name: ./lib/provider.mjs
