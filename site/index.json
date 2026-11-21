@@ -31,6 +31,18 @@
       },
       "versions": [
         {
+          "version": "0.1.2",
+          "publishTimestamp": 1795270990,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/NorwinYu/dsh-deepseek-asr",
+            "commit": "06ab165b01eb4d166d17e7a6c48f5116ca3f7fdf"
+          },
+          "engines": {
+            "dsh": ">=0.2.2-rc.1 <0.3.0"
+          }
+        },
+        {
           "version": "0.1.1",
           "publishTimestamp": 1795270427,
           "source": {
