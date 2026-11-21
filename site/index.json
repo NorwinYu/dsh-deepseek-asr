@@ -22,7 +22,12 @@
         "url": "https://github.com/NorwinYu/dsh-deepseek-asr"
       },
       "metadata": {
-        "keywords": ["speech-to-text", "voice-input", "deepseek", "asr"]
+        "keywords": [
+          "speech-to-text",
+          "voice-input",
+          "deepseek",
+          "asr"
+        ]
       },
       "versions": [
         {
@@ -31,7 +36,7 @@
           "source": {
             "type": "git",
             "url": "https://github.com/NorwinYu/dsh-deepseek-asr",
-            "commit": "0000000000000000000000000000000000000000"
+            "commit": "ee28bc3e77d7e45377d6f99ed2b2a9dc4d0ea97d"
           },
           "engines": {
             "dsh": ">=0.2.2-rc.1 <0.3.0"
