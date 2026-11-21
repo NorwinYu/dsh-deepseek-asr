@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Bundle invariants
+        run: node test/manifest.mjs
+      - name: Syntax
+        run: |
+          set -e
+          for file in lib/*.js lib/*.mjs test/*.mjs; do
+            node --check "$file"
+          done
+      - name: Validate the plugin index
+        run: |
+          npm install --no-save --silent @deepseek-ai/dsh-plugin-market-index@0.2.2-rc.5
+          node --input-type=module -e "
+            import { readFile } from 'node:fs/promises'
+            import { parseMarketIndex } from '@deepseek-ai/dsh-plugin-market-index'
+            const url = 'https://norwinyu.github.io/dsh-deepseek-asr/index.json'
+            const doc = JSON.parse(await readFile('site/index.json', 'utf8'))
+            console.log('index ok:', parseMarketIndex(doc, url).plugins.length, 'plugin(s)')
+          "
