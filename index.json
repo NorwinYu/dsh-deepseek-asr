@@ -1,0 +1,82 @@
+{
+  "format": 1,
+  "title": {
+    "en": "DeepSeek ASR for DSH"
+  },
+  "description": {
+    "en": "Cloud speech-to-text for DeepSeek Harness voice input, through DeepSeek's paid ASR API."
+  },
+  "plugins": [
+    {
+      "name": "dsh-deepseek-asr",
+      "title": {
+        "en": "DeepSeek ASR"
+      },
+      "description": {
+        "en": "Speak into DSH and let DeepSeek's paid ASR API transcribe it. No local model download."
+      },
+      "icon": "icons/dsh-deepseek-asr.svg",
+      "author": "Norwin Yu",
+      "homepage": "https://github.com/NorwinYu/dsh-deepseek-asr#readme",
+      "repository": {
+        "url": "https://github.com/NorwinYu/dsh-deepseek-asr"
+      },
+      "metadata": {
+        "keywords": [
+          "speech-to-text",
+          "voice-input",
+          "deepseek",
+          "asr"
+        ]
+      },
+      "versions": [
+        {
+          "version": "0.1.3",
+          "publishTimestamp": 1795346267,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.2-rc.1 <0.3.0"
+          }
+        },
+        {
+          "version": "0.1.2",
+          "publishTimestamp": 1795270990,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/NorwinYu/dsh-deepseek-asr",
+            "commit": "06ab165b01eb4d166d17e7a6c48f5116ca3f7fdf"
+          },
+          "engines": {
+            "dsh": ">=0.2.2-rc.1 <0.3.0"
+          }
+        },
+        {
+          "version": "0.1.1",
+          "publishTimestamp": 1795270427,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/NorwinYu/dsh-deepseek-asr",
+            "commit": "2e2f3c5c9a09d89050db26b71fdb79eafb9d0cb7"
+          },
+          "engines": {
+            "dsh": ">=0.2.2-rc.1 <0.3.0"
+          }
+        },
+        {
+          "version": "0.1.0",
+          "publishTimestamp": 1763712000,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/NorwinYu/dsh-deepseek-asr",
+            "commit": "ee28bc3e77d7e45377d6f99ed2b2a9dc4d0ea97d"
+          },
+          "engines": {
+            "dsh": ">=0.2.2-rc.1 <0.3.0"
+          }
+        }
+      ]
+    }
+  ]
+}
