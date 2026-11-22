@@ -114,8 +114,8 @@ From a pinned Git release:
 dsh plugin --profile <name> add git+https://github.com/NorwinYu/dsh-deepseek-asr.git#v0.1.3
 ```
 
-The index lists both sources for the current version; the npm tarball is the same
-code without the development-only files.
+The index serves the current version from npm; older versions stay pinned to
+their commits.
 
 ## Usage
 
