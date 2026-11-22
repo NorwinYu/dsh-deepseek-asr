@@ -25,7 +25,7 @@ first recording. This bundle keeps the microphone button, the recording bar, the
 language and input-device settings, and the editable draft insertion — and
 replaces the recognizer with a call to DeepSeek's hosted ASR endpoint.
 
-One `POST /v1/tools/asr`, one transcript, nothing on disk.
+One `POST /v1/tools/asr`, one transcript, no model to download or keep.
 
 ## Table of Contents
 
@@ -36,6 +36,7 @@ One `POST /v1/tools/asr`, one transcript, nothing on disk.
 - [Usage](#usage)
 - [Configuration](#configuration)
 - [Privacy and billing](#privacy-and-billing)
+- [Uninstall](#uninstall)
 - [Troubleshooting](#troubleshooting)
 - [Development](#development)
 - [Contributing](#contributing)
@@ -49,13 +50,15 @@ One `POST /v1/tools/asr`, one transcript, nothing on disk.
   the rest of the machine.
 - **Same interface.** The bundle contributes a provider, not a UI: the stock
   microphone, settings page, and draft flow all stay as they are.
-- **Cheap at conversation length.** A few seconds of speech costs a fraction of
-  a cent, and the key is one you may already use for chat.
+- **Pay per use.** Billing is per hour of audio on your own DeepSeek account
+  ([rates](https://api-docs.deepseek.com/guides/asr)); a few seconds of dictation
+  is a fraction of a fen, and the key may be one you already use for chat.
 
 ## How it works
 
 The bundle is a patch layer over the built-in Voice input bundle. It addresses
-the rows that bundle already inserts and swaps only the recognizer:
+the rows that bundle already inserts and swaps only the recognizer (simplified;
+the shipped patch also names each module):
 
 ```yaml
 - id: speech-to-text              # point the shared registry at the cloud provider
@@ -174,6 +177,16 @@ and promotions change.
 
 If you need offline transcription, keep the built-in SenseVoice recognizer; both
 can coexist in one profile if you point `defaultProvider` at one of them.
+
+## Uninstall
+
+Remove the bundle from the profile (Discover, or
+`dsh plugin --profile <name> remove dsh-deepseek-asr`). The built-in Voice input
+bundle then owns the recognizer again: its SenseVoice row is re-enabled, and the
+next first recording offers the model download.
+
+Nothing of this plugin persists — no model cache, no stored key, no audio. If you
+set `statusPath`, delete that file yourself.
 
 ## Troubleshooting
 
