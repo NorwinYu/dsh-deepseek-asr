@@ -12,6 +12,7 @@
   <a href="LICENSE"><img src="https://img.shields.io/github/license/NorwinYu/dsh-deepseek-asr" alt="License"></a>
   <a href="https://github.com/NorwinYu/dsh-deepseek-asr/tags"><img src="https://img.shields.io/github/v/tag/NorwinYu/dsh-deepseek-asr?sort=semver" alt="Latest release"></a>
   <a href="https://github.com/NorwinYu/dsh-deepseek-asr/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/NorwinYu/dsh-deepseek-asr/ci.yml?label=ci" alt="CI"></a>
+  <a href="https://www.npmjs.com/package/dsh-deepseek-asr"><img src="https://img.shields.io/npm/v/dsh-deepseek-asr" alt="npm"></a>
   <a href="https://norwinyu.github.io/dsh-deepseek-asr/index.json"><img src="https://img.shields.io/badge/plugin%20index-live-4D6BFE" alt="Plugin index"></a>
   <img src="https://img.shields.io/badge/DSH-0.2.2--rc.1%20%E2%80%93%200.3-4D6BFE" alt="DSH version range">
 </p>
@@ -101,14 +102,20 @@ From the plugin index (recommended):
    `https://norwinyu.github.io/dsh-deepseek-asr/index.json`.
 3. Open **DeepSeek ASR** and install the listed version, then reload.
 
-From a pinned release:
+From npm:
 
 ```sh
-dsh plugin --profile <name> add git+https://github.com/NorwinYu/dsh-deepseek-asr.git#v0.1.2
+dsh plugin --profile <name> add dsh-deepseek-asr@0.1.3
 ```
 
-Releases are pinned to a commit, so upgrading means installing the newer listed
-version rather than pulling whatever the branch holds.
+From a pinned Git release:
+
+```sh
+dsh plugin --profile <name> add git+https://github.com/NorwinYu/dsh-deepseek-asr.git#v0.1.3
+```
+
+The index lists both sources for the current version; the npm tarball is the same
+code without the development-only files.
 
 ## Usage
 

@@ -4,6 +4,13 @@ All notable changes are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project
 adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.3] - 2026-11-22
+
+### Added
+
+- npm package `dsh-deepseek-asr`: the index now lists an npm source for this
+  version alongside the pinned Git commit, so installing no longer requires git.
+
 ## [0.1.2] - 2026-11-21
 
 ### Added
@@ -51,7 +58,8 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Plugin index published on GitHub Pages, with a workflow that validates the
   index before deploying it.
 
-[Unreleased]: https://github.com/NorwinYu/dsh-deepseek-asr/compare/v0.1.2...HEAD
+[Unreleased]: https://github.com/NorwinYu/dsh-deepseek-asr/compare/v0.1.3...HEAD
+[0.1.3]: https://github.com/NorwinYu/dsh-deepseek-asr/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/NorwinYu/dsh-deepseek-asr/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/NorwinYu/dsh-deepseek-asr/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/NorwinYu/dsh-deepseek-asr/releases/tag/v0.1.0
