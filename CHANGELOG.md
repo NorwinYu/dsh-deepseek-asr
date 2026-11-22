@@ -11,6 +11,12 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - npm package `dsh-deepseek-asr`: the index now lists an npm source for this
   version alongside the pinned Git commit, so installing no longer requires git.
 
+### Security
+
+- The `endpoint` must be `https:` (plain `http:` is accepted only on loopback),
+  so the bearer key never travels in clear text.
+- Error excerpts shown in the UI redact anything that looks like a credential.
+
 ## [0.1.2] - 2026-11-21
 
 ### Added

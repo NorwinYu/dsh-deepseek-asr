@@ -145,7 +145,7 @@ the profile's `cordis.patch.yml`:
 | --- | --- | --- |
 | `providerId` | `deepseek-asr` | Registry id; must match `defaultProvider` on the `speech-to-text` row |
 | `displayName` | `DeepSeek ASR` | Name shown in the voice settings |
-| `endpoint` | `https://api.deepseek.com/v1/tools/asr` | Accepts 16-bit PCM WAV or Ogg Opus, up to 8 MiB and 120 s |
+| `endpoint` | `https://api.deepseek.com/v1/tools/asr` | Accepts 16-bit PCM WAV or Ogg Opus, up to 8 MiB and 120 s. Must be `https:`, or `http:` on loopback |
 | `apiKeyEnv` | `DEEPSEEK_API_KEY` | Credential name, resolved through the credentials service then the process environment |
 | `apiKey` | none | Literal key; not recommended, it would land in a config file |
 | `requestTimeoutMs` | `120000` | Per-request timeout |
